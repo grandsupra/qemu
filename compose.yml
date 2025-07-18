@@ -3,10 +3,12 @@ services:
     image: qemux/qemu
     container_name: qemu
     environment:
-      BOOT: "alpine"
+      BOOT: "ubuntus"
+      RAM_SIZE: "5G"
     devices:
       - /dev/kvm
       - /dev/net/tun
+      - /dev/sdc:/disk2
     cap_add:
       - NET_ADMIN
     ports:
